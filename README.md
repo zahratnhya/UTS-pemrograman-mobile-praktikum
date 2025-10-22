@@ -27,7 +27,6 @@ Aplikasi ini dibuat sebagai proyek UTS untuk mata kuliah **Pemrograman Mobile**,
 | **Assignments Page** | `assignments_page.dart` | Menampilkan seluruh daftar tugas beserta progres penyelesaian dalam bentuk bar. |
 | **Assignment Detail Page** | `assignment_detail_page.dart` | Menampilkan detail tugas dan memungkinkan pengguna menandainya sebagai selesai. |
 | **Notes Page** | `notes_page.dart` | Menyimpan catatan atau ringkasan kuliah yang penting. |
-| **Notifications Page** | `notifications_page.dart` | Menampilkan notifikasi kegiatan dan tugas mendatang. |
 
 ---
 
