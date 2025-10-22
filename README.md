@@ -82,7 +82,6 @@ Aplikasi akan dijalankan di emulator atau perangkat yang terhubung.
 ## 2. Beranda (Home Page)
 
 - Lihat **daftar kelas** dan **tugas hari ini**.  
-- Klik ikon **🔔 (lonceng)** untuk membuka halaman **Notifications**.  
 - Tekan tombol **Add Task** untuk menambah tugas baru.  
 
 Tampilan beranda membantu pengguna memantau aktivitas harian secara cepat.
