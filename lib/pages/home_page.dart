@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'add_task_page.dart';
 import 'schedule_detail_page.dart';
 
+// Halaman utama aplikasi
 class HomePage extends StatefulWidget {
   final Map<String, dynamic> data;
   const HomePage({Key? key, required this.data}) : super(key: key);
@@ -13,18 +14,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    // Data pengguna, jadwal, dan tugas
     final user = widget.data['user'] ?? {};
     final schedule = List.from(widget.data['schedule'] ?? []);
     final tasks = List.from(widget.data['tasks'] ?? []);
 
+    // Tanggal hari ini
     final today = DateTime.now();
     final todayStr =
         "${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}";
 
+    // Filter kelas hari ini
     final classesToday = schedule
         .where((item) => item['type'] == 'class' && item['date'] == todayStr)
         .toList();
 
+    // Menampilkan dua tugas pertama
     final previewTasks =
         tasks.length > 2 ? tasks.sublist(0, 2) : List.from(tasks);
 
@@ -36,9 +41,11 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 🔹 Header
+
+              // Header profil pengguna
               Row(
                 children: [
+                  // Avatar
                   CircleAvatar(
                     radius: 28,
                     backgroundColor: Colors.indigo.shade100,
@@ -52,6 +59,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   const SizedBox(width: 14),
+
+                  // Sapaan pengguna
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,10 +81,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+
+                  // Tombol notifikasi
                   IconButton(
-                    onPressed: () {
-                     
-                    },
+                    onPressed: () {},
                     icon: const Icon(Icons.notifications_rounded,
                         size: 28, color: Colors.indigo),
                   ),
@@ -84,7 +93,7 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 28),
 
-              // 🔹 Classes Today
+              // Bagian kelas hari ini
               const Text(
                 "Today's Classes",
                 style: TextStyle(
@@ -94,13 +103,16 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 12),
 
+              // Jika tidak ada kelas
               if (classesToday.isEmpty)
                 _emptyState("No classes today 🎉")
               else
+                // Menampilkan daftar kelas
                 Column(
                 children: classesToday.map((c) {
                   return GestureDetector(
                     onTap: () {
+                      // Pindah ke detail kelas
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -129,6 +141,7 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          // Info kelas
                           Flexible(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,7 +173,7 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 30),
 
-              // 🔹 Today's Tasks
+              // Bagian tugas hari ini
               const Text(
                 "Today's Tasks",
                 style: TextStyle(
@@ -170,9 +183,11 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 12),
 
+              // Jika tidak ada tugas
               if (previewTasks.isEmpty)
                 _emptyState("No tasks for today 🎯")
               else
+                // Menampilkan daftar tugas
                 Column(
                   children: previewTasks.map((t) {
                     return Container(
@@ -191,6 +206,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: Row(
                         children: [
+                          // Checkbox status tugas
                           Checkbox(
                             value: t['status'] ?? false,
                             onChanged: (val) {
@@ -201,6 +217,8 @@ class _HomePageState extends State<HomePage> {
                             activeColor: Colors.indigo,
                           ),
                           const SizedBox(width: 8),
+
+                          // Info tugas
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -236,12 +254,13 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 30),
 
-              // 🔹 Add Task Button
+              // Tombol tambah tugas
               SizedBox(
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton.icon(
                   onPressed: () {
+                    // Buka halaman tambah tugas
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -277,6 +296,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // Tampilan jika data kosong
   Widget _emptyState(String message) {
     return Container(
       width: double.infinity,

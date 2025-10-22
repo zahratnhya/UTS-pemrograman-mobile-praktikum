@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'schedule_detail_page.dart';
 
+// Halaman jadwal (menampilkan kalender dan kegiatan harian)
 class SchedulePage extends StatefulWidget {
   final Map<String, dynamic> data;
   const SchedulePage({Key? key, required this.data}) : super(key: key);
@@ -10,11 +11,11 @@ class SchedulePage extends StatefulWidget {
 }
 
 class _SchedulePageState extends State<SchedulePage> {
-  int selectedDay = DateTime.now().day;
-  int selectedMonth = DateTime.now().month;
-  int selectedYear = DateTime.now().year;
+  int selectedDay = DateTime.now().day; // Hari yang dipilih
+  int selectedMonth = DateTime.now().month; // Bulan yang dipilih
+  int selectedYear = DateTime.now().year; // Tahun yang dipilih
 
-  // 🔹 Ambil semua jadwal berdasarkan tanggal
+  // Mengambil jadwal berdasarkan tanggal yang dipilih
   List<Map<String, dynamic>> getScheduleForDay() {
     final schedule = List<Map<String, dynamic>>.from(widget.data['schedule'] ?? []);
     final selectedDate =
@@ -22,6 +23,7 @@ class _SchedulePageState extends State<SchedulePage> {
     return schedule.where((s) => s['date'] == selectedDate).toList();
   }
 
+  // Kalender sederhana
   Widget _simpleCalendar(BuildContext context) {
     final daysInMonth = DateUtils.getDaysInMonth(selectedYear, selectedMonth);
     final days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -29,7 +31,7 @@ class _SchedulePageState extends State<SchedulePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // 🔹 Header bulan dan navigasi
+        // Header bulan dan tombol navigasi bulan
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -66,6 +68,8 @@ class _SchedulePageState extends State<SchedulePage> {
           ],
         ),
         const SizedBox(height: 8),
+
+        // Singkatan nama hari
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: days
@@ -73,6 +77,8 @@ class _SchedulePageState extends State<SchedulePage> {
               .toList(),
         ),
         const SizedBox(height: 10),
+
+        // Menampilkan tanggal dalam bulan
         Wrap(
           spacing: 6,
           runSpacing: 8,
@@ -112,6 +118,7 @@ class _SchedulePageState extends State<SchedulePage> {
     );
   }
 
+  // Mengubah angka bulan menjadi nama bulan
   String _monthName(int month) {
     const months = [
       "January", "February", "March", "April", "May", "June",
@@ -122,37 +129,42 @@ class _SchedulePageState extends State<SchedulePage> {
 
   @override
   Widget build(BuildContext context) {
-    final todaysSchedule = getScheduleForDay();
-    final classEvents =
-        todaysSchedule.where((s) => s['type'] == 'class').toList();
-    final otherEvents =
-        todaysSchedule.where((s) => s['type'] != 'class').toList();
+    final todaysSchedule = getScheduleForDay(); // Jadwal hari yang dipilih
+    final classEvents = todaysSchedule.where((s) => s['type'] == 'class').toList(); // Kelas
+    final otherEvents = todaysSchedule.where((s) => s['type'] != 'class').toList(); // Acara lain
 
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Judul halaman
           Text('Schedule',
               style: Theme.of(context)
                   .textTheme
                   .titleLarge
                   ?.copyWith(fontWeight: FontWeight.bold)),
           const SizedBox(height: 16),
+
+          // Menampilkan kalender
           _simpleCalendar(context),
           const SizedBox(height: 20),
+
+          // Teks tanggal yang sedang dipilih
           Text(
             "Schedule for ${selectedDay} ${_monthName(selectedMonth)}",
             style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
           ),
           const SizedBox(height: 12),
 
+          // Jika tidak ada jadwal
           if (todaysSchedule.isEmpty)
             const Center(
               child: Text('No events scheduled on this day 📅',
                   style: TextStyle(color: Colors.grey)),
             ),
 
+          // Daftar kelas
           if (classEvents.isNotEmpty) ...[
             const Text('📚 Classes',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
@@ -165,6 +177,7 @@ class _SchedulePageState extends State<SchedulePage> {
             const SizedBox(height: 20),
           ],
 
+          // Daftar aktivitas lain
           if (otherEvents.isNotEmpty) ...[
             const Text('🗓 Activities',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
@@ -180,47 +193,48 @@ class _SchedulePageState extends State<SchedulePage> {
     );
   }
 
+  // Widget tampilan untuk setiap item jadwal
   Widget _eventTile(Map<String, dynamic> s, Color bgColor) {
-  return GestureDetector(
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ScheduleDetailPage(schedule: s),
-        ),
-      );
-    },
-    child: Container(
-      width: double.infinity,
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(s['subject'] ?? '',
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
-                const SizedBox(height: 4),
-                Text(s['time'] ?? '',
-                    style: TextStyle(color: Colors.grey[700], fontSize: 13)),
-                if (s['location'] != null)
-                  Text('📍 ${s['location']}',
-                      style: TextStyle(color: Colors.grey[600], fontSize: 12)),
-              ],
-            ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ScheduleDetailPage(schedule: s),
           ),
-          const Icon(Icons.chevron_right, color: Colors.grey),
-        ],
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        margin: const EdgeInsets.symmetric(vertical: 6),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Informasi jadwal
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(s['subject'] ?? '',
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 4),
+                  Text(s['time'] ?? '',
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13)),
+                  if (s['location'] != null)
+                    Text('📍 ${s['location']}',
+                        style: TextStyle(color: Colors.grey[600], fontSize: 12)),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right, color: Colors.grey),
+          ],
+        ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 }

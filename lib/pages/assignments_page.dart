@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'assignment_detail_page.dart';
 
+// Halaman daftar tugas (Assignments Page)
 class AssignmentsPage extends StatefulWidget {
   final Map<String, dynamic> data;
   const AssignmentsPage({Key? key, required this.data}) : super(key: key);
@@ -10,12 +11,13 @@ class AssignmentsPage extends StatefulWidget {
 }
 
 class _AssignmentsPageState extends State<AssignmentsPage> {
-  String selectedFilter = 'All';
+  String selectedFilter = 'All'; // Filter tampilan tugas
 
   @override
   Widget build(BuildContext context) {
     final allAssignments = List.from(widget.data['assignments'] ?? []);
 
+    // Filter tugas berdasarkan status
     List filteredAssignments;
     if (selectedFilter == 'Ongoing') {
       filteredAssignments =
@@ -27,7 +29,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
       filteredAssignments = allAssignments;
     }
 
-
+    // Hitung rata-rata progres semua tugas
     double overallProgress = 0;
     if (allAssignments.isNotEmpty) {
       overallProgress = allAssignments
@@ -44,15 +46,15 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-        
+              // Header halaman
               Row(
                 children: [
                   const Icon(Icons.assignment_rounded,
                       color: Colors.indigo, size: 30),
                   const SizedBox(width: 10),
-                  Text(
+                  const Text(
                     'Assignments',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
                       color: Colors.black87,
@@ -63,7 +65,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
 
               const SizedBox(height: 24),
 
-        
+              // Progress keseluruhan dalam bentuk lingkaran
               Center(
                 child: Stack(
                   alignment: Alignment.center,
@@ -103,7 +105,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
 
               const SizedBox(height: 30),
 
-
+              // Tombol filter tugas
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -117,16 +119,18 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
 
               const SizedBox(height: 20),
 
-
+              // Jika tidak ada tugas
               if (filteredAssignments.isEmpty)
                 _emptyState("No assignments found 🎓")
               else
+                // Tampilkan daftar tugas
                 Column(
                   children: filteredAssignments.map((a) {
                     final progress = (a['progress'] as num).toDouble();
                     final isDone = progress == 1.0;
 
                     return GestureDetector(
+                      // Navigasi ke halaman detail tugas
                       onTap: () {
                         Navigator.push(
                           context,
@@ -153,7 +157,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // 🔹 Icon tugas
+                            // Ikon status tugas
                             Container(
                               width: 44,
                               height: 44,
@@ -175,7 +179,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
                             ),
                             const SizedBox(width: 14),
 
-
+                            // Detail tugas
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +201,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
                                   ),
                                   const SizedBox(height: 10),
 
-
+                                  // Progress bar tugas
                                   TweenAnimationBuilder<double>(
                                     tween: Tween(
                                         begin: 0, end: progress.clamp(0, 1)),
@@ -218,6 +222,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
                                   ),
                                   const SizedBox(height: 6),
 
+                                  // Persentase progres tugas
                                   Align(
                                     alignment: Alignment.centerRight,
                                     child: Text(
@@ -246,6 +251,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
     );
   }
 
+  // Widget filter kategori tugas
   Widget _buildFilterChip(String label, Color color) {
     final isSelected = selectedFilter == label;
     return Padding(
@@ -269,7 +275,7 @@ class _AssignmentsPageState extends State<AssignmentsPage> {
     );
   }
 
-
+  // Tampilan jika tidak ada data
   Widget _emptyState(String message) {
     return Container(
       width: double.infinity,

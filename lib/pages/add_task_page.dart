@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Halaman untuk menambah tugas baru
 class AddTaskPage extends StatefulWidget {
   final List existingTasks;
   const AddTaskPage({Key? key, required this.existingTasks}) : super(key: key);
@@ -9,10 +10,10 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
-  final _formKey = GlobalKey<FormState>();
-  String title = '';
-  String time = '';
-  bool status = false;
+  final _formKey = GlobalKey<FormState>(); // Kunci form untuk validasi
+  String title = ''; // Menyimpan judul tugas
+  String time = '';  // Menyimpan waktu tugas
+  bool status = false; // Status tugas (selesai/belum)
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +34,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // 🔹 Card Form Container
+              // Container utama untuk form input
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 22),
+                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 22),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(18),
@@ -63,11 +63,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       ),
                       const SizedBox(height: 20),
 
-                      // 🔸 Title Field
+                      // Input judul tugas
                       TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon:
-                              const Icon(Icons.edit_note, color: Colors.indigo),
+                          prefixIcon: const Icon(Icons.edit_note, color: Colors.indigo),
                           labelText: 'Task Title',
                           filled: true,
                           fillColor: Colors.grey.shade50,
@@ -84,11 +83,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
                       const SizedBox(height: 16),
 
-                      // 🔸 Time Field
+                      // Input waktu tugas
                       TextFormField(
                         decoration: InputDecoration(
-                          prefixIcon:
-                              const Icon(Icons.access_time, color: Colors.indigo),
+                          prefixIcon: const Icon(Icons.access_time, color: Colors.indigo),
                           labelText: 'Time (e.g. 14:30 PM)',
                           filled: true,
                           fillColor: Colors.grey.shade50,
@@ -105,12 +103,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
                       const SizedBox(height: 28),
 
-                      // 🔹 Save Button
+                      // Tombol simpan tugas
                       SizedBox(
                         width: double.infinity,
                         height: 55,
                         child: ElevatedButton.icon(
                           onPressed: () {
+                            // Validasi form sebelum menyimpan
                             if (_formKey.currentState!.validate()) {
                               Navigator.pop(context, {
                                 'title': title,

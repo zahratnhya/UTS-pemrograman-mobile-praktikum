@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+// Halaman detail jadwal
 class ScheduleDetailPage extends StatelessWidget {
   final Map<String, dynamic> schedule;
   const ScheduleDetailPage({Key? key, required this.schedule}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final typeColor = _getTypeColor(schedule['type']);
-    final typeIcon = _getTypeIcon(schedule['type']);
+    final typeColor = _getTypeColor(schedule['type']); // Warna sesuai jenis jadwal
+    final typeIcon = _getTypeIcon(schedule['type']); // Ikon sesuai jenis jadwal
 
     return Scaffold(
       backgroundColor: const Color(0xFFF6F7FB),
@@ -22,12 +23,15 @@ class ScheduleDetailPage extends StatelessWidget {
         elevation: 4,
         shadowColor: typeColor.withOpacity(0.4),
       ),
+
+      // Isi halaman
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔹 Header Card
+
+            // Bagian header detail kegiatan
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(22),
@@ -85,7 +89,7 @@ class ScheduleDetailPage extends StatelessWidget {
 
             const SizedBox(height: 26),
 
-            // 🔹 Info Section
+            // Informasi detail jadwal
             _infoCard([
               _infoRow(Icons.access_time_rounded, "Time", schedule['time']),
               _infoRow(Icons.calendar_today_rounded, "Date", schedule['date']),
@@ -95,7 +99,7 @@ class ScheduleDetailPage extends StatelessWidget {
 
             const SizedBox(height: 26),
 
-            // 🔹 Description Section
+            // Deskripsi kegiatan
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(18),
@@ -126,7 +130,7 @@ class ScheduleDetailPage extends StatelessWidget {
 
             const SizedBox(height: 40),
 
-            // 🔹 Back Button
+            // Tombol kembali
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
@@ -159,7 +163,7 @@ class ScheduleDetailPage extends StatelessWidget {
     );
   }
 
-  // 🔸 Sub-widgets for clarity
+  // Kartu berisi daftar informasi
   Widget _infoCard(List<Widget> children) {
     return Container(
       width: double.infinity,
@@ -179,6 +183,7 @@ class ScheduleDetailPage extends StatelessWidget {
     );
   }
 
+  // Baris informasi dengan ikon dan label
   Widget _infoRow(IconData icon, String label, String? value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -206,6 +211,7 @@ class ScheduleDetailPage extends StatelessWidget {
     );
   }
 
+  // Menentukan ikon sesuai jenis kegiatan
   IconData _getTypeIcon(String? type) {
     switch (type) {
       case 'class':
@@ -225,6 +231,7 @@ class ScheduleDetailPage extends StatelessWidget {
     }
   }
 
+  // Menentukan warna sesuai jenis kegiatan
   Color _getTypeColor(String? type) {
     switch (type) {
       case 'class':

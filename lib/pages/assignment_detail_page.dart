@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Halaman detail tugas
 class AssignmentDetailPage extends StatefulWidget {
   final Map<String, dynamic> assignment;
   const AssignmentDetailPage({Key? key, required this.assignment})
@@ -10,11 +11,12 @@ class AssignmentDetailPage extends StatefulWidget {
 }
 
 class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
-  late bool isCompleted;
+  late bool isCompleted; // Status tugas (selesai atau belum)
 
   @override
   void initState() {
     super.initState();
+    // Cek apakah tugas sudah selesai
     isCompleted = (widget.assignment['progress'] ?? 0.0) >= 1.0;
   }
 
@@ -40,7 +42,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔹 Judul
+            //  Nama mata kuliah & deadline
             Text(
               a['subject'] ?? 'Course',
               style: const TextStyle(
@@ -57,7 +59,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
 
             const SizedBox(height: 24),
 
-            // 🔹 Card Progress
+            //  Kartu progres tugas
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(18),
@@ -113,7 +115,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
 
             const SizedBox(height: 30),
 
-            // 🔹 Card Info
+            //  Informasi tugas (mata kuliah, deadline, status)
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(18),
@@ -143,7 +145,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
 
             const SizedBox(height: 30),
 
-            // 🔹 Description Section dengan gradasi biru-putih
+            //Deskripsi tugas
             const Text(
               "Description",
               style: TextStyle(
@@ -187,7 +189,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
 
             const SizedBox(height: 40),
 
-            // 🔹 Button Section
+            // Tombol untuk menandai tugas selesai
             Center(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 500),
@@ -251,6 +253,7 @@ class _AssignmentDetailPageState extends State<AssignmentDetailPage> {
     );
   }
 
+  //Komponen baris informasi
   Widget _infoRow(IconData icon, String label, String value) {
     return Row(
       children: [
