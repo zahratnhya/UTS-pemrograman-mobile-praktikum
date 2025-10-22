@@ -1,0 +1,496 @@
+{
+  "user": {
+    "name": "Zahra",
+    "avatar": ""
+  },
+  "classes_today": [
+    { "title": "Mobile Programming", "time": "13:20 PM - 14:20 PM" },
+    { "title": "Database Systems", "time": "15:00 PM - 16:00 PM" }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Read Lecture Notes",
+      "time": "09:30 AM",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "Complete Assignment 2",
+      "time": "12:30 PM",
+
+      "status": false
+    },
+    {
+      "id": 3,
+      "title": "Review Placeholder Text",
+      "time": "02:30 PM",
+ 
+      "status": true
+    }
+  ],
+   "schedule": [
+    { 
+      "date": "2025-10-19", 
+      "type": "class", 
+      "subject": "Mobile Programming", 
+      "time": "09:00 - 10:30", 
+      "location": "Lab 1",
+      "description": "Lecture on Flutter state management and responsive UI design.",
+      "organizer": "Dr. Ahmad", 
+      "attendees": ["Zahra", "Ali", "Siti"], 
+      "notes": "Bring your laptop and Flutter installed."
+    },
+    { 
+      "date": "2025-10-19", 
+      "type": "meeting", 
+      "subject": "BEM Internal Meeting", 
+      "time": "11:00 - 12:00", 
+      "location": "Student Hall",
+      "description": "Monthly coordination meeting for BEM committee members.",
+      "organizer": "BEM Secretary", 
+      "attendees": ["Committee Members"], 
+      "notes": "Prepare the monthly report."
+    },
+    { 
+      "date": "2025-10-19", 
+      "type": "task", 
+      "subject": "Database Assignment Deadline", 
+      "time": "23:59", 
+      "location": "LMS",
+      "description": "Submit your ERD diagram and SQL queries via LMS.",
+      "organizer": "Dr. Lina", 
+      "attendees": ["All Students"], 
+      "notes": "Late submission will get 0 points."
+    },
+    { 
+      "date": "2025-10-19", 
+      "type": "event", 
+      "subject": "Campus Blood Donation", 
+      "time": "13:00 - 15:00", 
+      "location": "Auditorium",
+      "description": "A voluntary blood donation event organized by Red Cross Club.",
+      "organizer": "Red Cross Club", 
+      "attendees": ["Open to all students"], 
+      "notes": "Remember to bring ID and eat before donating."
+    },
+    { 
+      "date": "2025-10-20", 
+      "type": "class", 
+      "subject": "Database Systems", 
+      "time": "08:00 - 09:30", 
+      "location": "Room 203",
+      "description": "Lecture covering relational databases and SQL optimization techniques.",
+      "organizer": "Dr. Lina", 
+      "attendees": ["Zahra", "Ali", "Siti"], 
+      "notes": "Bring previous assignment for discussion."
+    },
+    { 
+      "date": "2025-10-20", 
+      "type": "guidance", 
+      "subject": "Thesis Consultation", 
+      "time": "10:00 - 11:00", 
+      "location": "Supervisor Office",
+      "description": "Individual consultation with supervisor regarding thesis progress.",
+      "organizer": "Prof. Budi", 
+      "attendees": ["Zahra"], 
+      "notes": "Prepare your thesis draft."
+    },
+    { 
+      "date": "2025-10-20", 
+      "type": "event", 
+      "subject": "Career Talk Show", 
+      "time": "13:00 - 15:00", 
+      "location": "Auditorium",
+      "description": "Career guidance talk show with industry professionals.",
+      "organizer": "Career Center", 
+      "attendees": ["All Students"], 
+      "notes": "Bring notebook for notes."
+    },
+    { 
+      "date": "2025-10-20", 
+      "type": "organization", 
+      "subject": "HIMTI Design Division Meeting", 
+      "time": "16:00 - 17:30", 
+      "location": "Lab 2",
+      "description": "Weekly planning meeting for the HIMTI design team.",
+      "organizer": "HIMTI Committee", 
+      "attendees": ["Division Members"], 
+      "notes": "Review previous week's progress."
+    },
+    { 
+      "date": "2025-10-21", 
+      "type": "class", 
+      "subject": "Web Development", 
+      "time": "09:00 - 10:30", 
+      "location": "Lab 2",
+      "description": "Lecture on responsive web design and Bootstrap grids.",
+      "organizer": "Dr. Andi", 
+      "attendees": ["Zahra", "Ali", "Siti"], 
+      "notes": "Complete previous HTML exercise."
+    },
+    { 
+      "date": "2025-10-21", 
+      "type": "task", 
+      "subject": "AI Report Submission", 
+      "time": "23:59", 
+      "location": "Online Portal",
+      "description": "Submit AI application report on recent generative AI technologies.",
+      "organizer": "Dr. Rina", 
+      "attendees": ["All Students"], 
+      "notes": "Max 3 pages, PDF format."
+    },
+    { 
+      "date": "2025-10-21", 
+      "type": "meeting", 
+      "subject": "Event Committee Coordination", 
+      "time": "14:00 - 15:30", 
+      "location": "Student Lounge",
+      "description": "Meeting for upcoming campus event organization.",
+      "organizer": "Event Committee", 
+      "attendees": ["Committee Members"], 
+      "notes": "Prepare agenda in advance."
+    },
+    { 
+      "date": "2025-10-21", 
+      "type": "event", 
+      "subject": "Mini Workshop: HTML Basics", 
+      "time": "16:00 - 17:30", 
+      "location": "Lab 3",
+      "description": "Hands-on workshop on HTML basics for beginners.",
+      "organizer": "Web Dev Club", 
+      "attendees": ["All Students"], 
+      "notes": "Bring laptops."
+    },
+    { 
+      "date": "2025-10-22", 
+      "type": "class", 
+      "subject": "Data Communication", 
+      "time": "08:00 - 09:30", 
+      "location": "Room 101",
+      "description": "Lecture on network topologies and communication protocols.",
+      "organizer": "Dr. Siti", 
+      "attendees": ["Zahra", "Ali", "Siti"], 
+      "notes": "Review previous networking assignment."
+    },
+    { 
+      "date": "2025-10-22", 
+      "type": "class", 
+      "subject": "Software Engineering", 
+      "time": "10:00 - 11:30", 
+      "location": "Room 110",
+      "description": "Lecture on UML diagrams and Agile development.",
+      "organizer": "Dr. Roni", 
+      "attendees": ["Zahra", "Ali", "Siti"], 
+      "notes": "Prepare use-case diagrams."
+    },
+    { 
+      "date": "2025-10-22", 
+      "type": "event", 
+      "subject": "Coding Challenge", 
+      "time": "13:00 - 15:00", 
+      "location": "Lab 4",
+      "description": "Competitive coding session for students.",
+      "organizer": "Programming Club", 
+      "attendees": ["All Students"], 
+      "notes": "Bring laptops and code editor installed."
+    },
+    { 
+      "date": "2025-10-22", 
+      "type": "organization", 
+      "subject": "Student Club Gathering", 
+      "time": "17:00 - 18:30", 
+      "location": "Campus Park",
+      "description": "Informal gathering for student clubs to share updates.",
+      "organizer": "Student Council", 
+      "attendees": ["Club Leaders"], 
+      "notes": "Prepare brief report of club activities."
+    },
+    { 
+    "date": "2025-10-23", 
+    "type": "class", 
+    "subject": "Ethics in Technology", 
+    "time": "08:00 - 09:30", 
+    "location": "Room 110",
+    "description": "Lecture discussing ethical implications of AI and emerging tech.",
+    "organizer": "Dr. Nisa", 
+    "attendees": ["Zahra", "Ali", "Siti"], 
+    "notes": "Prepare questions on case studies."
+  },
+  { 
+    "date": "2025-10-23", 
+    "type": "class", 
+    "subject": "Operating Systems", 
+    "time": "10:00 - 12:00", 
+    "location": "Room 304",
+    "description": "Lecture on process scheduling, memory management, and concurrency.",
+    "organizer": "Dr. Roni", 
+    "attendees": ["Zahra", "Ali", "Siti"], 
+    "notes": "Bring laptop for practical exercises."
+  },
+  { 
+    "date": "2025-10-23", 
+    "type": "event", 
+    "subject": "Public Speaking Workshop", 
+    "time": "13:00 - 15:00", 
+    "location": "Hall B",
+    "description": "Workshop to enhance public speaking and presentation skills.",
+    "organizer": "Student Council", 
+    "attendees": ["All Students"], 
+    "notes": "Prepare a 1-minute speech."
+  },
+  { 
+    "date": "2025-10-23", 
+    "type": "task", 
+    "subject": "Essay Submission", 
+    "time": "23:59", 
+    "location": "LMS",
+    "description": "Submit essay on ethics in technology via LMS.",
+    "organizer": "Dr. Nisa", 
+    "attendees": ["All Students"], 
+    "notes": "PDF format, max 3 pages."
+  },
+  { 
+    "date": "2025-10-24", 
+    "type": "class", 
+    "subject": "AI Fundamentals", 
+    "time": "09:00 - 10:30", 
+    "location": "Lab 3",
+    "description": "Lecture covering basic AI concepts and applications.",
+    "organizer": "Dr. Lina", 
+    "attendees": ["Zahra", "Ali", "Siti"], 
+    "notes": "Review previous AI exercises."
+  },
+  { 
+    "date": "2025-10-24", 
+    "type": "meeting", 
+    "subject": "Startup Pitch Mentoring", 
+    "time": "10:45 - 11:30", 
+    "location": "Room 202",
+    "description": "One-on-one mentoring session for startup pitch presentation.",
+    "organizer": "Innovation Hub Mentors", 
+    "attendees": ["Selected Students"], 
+    "notes": "Prepare pitch deck draft."
+  },
+  { 
+    "date": "2025-10-24", 
+    "type": "event", 
+    "subject": "Workshop: Flutter UI Advanced", 
+    "time": "13:00 - 16:00", 
+    "location": "Innovation Hub",
+    "description": "Hands-on workshop on advanced Flutter UI techniques.",
+    "organizer": "Flutter Dev Club", 
+    "attendees": ["All Students"], 
+    "notes": "Bring laptop with Flutter installed."
+  },
+  { 
+    "date": "2025-10-24", 
+    "type": "organization", 
+    "subject": "Volunteer Briefing", 
+    "time": "16:30 - 17:00", 
+    "location": "Community Center",
+    "description": "Briefing for volunteers on upcoming community service activities.",
+    "organizer": "Volunteer Coordinator", 
+    "attendees": ["Volunteers"], 
+    "notes": "Arrive on time."
+  },
+  { 
+    "date": "2025-10-25", 
+    "type": "event", 
+    "subject": "Tech Expo 2025", 
+    "time": "09:00 - 16:00", 
+    "location": "Auditorium",
+    "description": "Campus-wide technology expo showcasing student projects.",
+    "organizer": "Tech Club", 
+    "attendees": ["All Students & Visitors"], 
+    "notes": "Bring project poster if participating."
+  },
+  { 
+    "date": "2025-10-25", 
+    "type": "task", 
+    "subject": "Project Proposal Submission", 
+    "time": "23:59", 
+    "location": "Online Submission",
+    "description": "Submit final project proposal including methodology and objectives.",
+    "organizer": "Capstone Project Committee", 
+    "attendees": ["All Students"], 
+    "notes": "PDF format only."
+  },
+  { 
+    "date": "2025-10-26", 
+    "type": "class", 
+    "subject": "Data Visualization", 
+    "time": "08:00 - 09:30", 
+    "location": "Lab 5",
+    "description": "Lecture on creating charts and dashboards with Python libraries.",
+    "organizer": "Dr. Ahmad", 
+    "attendees": ["Zahra", "Ali", "Siti"], 
+    "notes": "Prepare datasets for practice."
+  },
+  { 
+    "date": "2025-10-26", 
+    "type": "meeting", 
+    "subject": "Community Project Brief", 
+    "time": "10:00 - 11:30", 
+    "location": "Meeting Room 1",
+    "description": "Briefing meeting for students participating in community projects.",
+    "organizer": "Community Project Coordinator", 
+    "attendees": ["Project Teams"], 
+    "notes": "Bring project plan."
+  },
+  { 
+    "date": "2025-10-26", 
+    "type": "event", 
+    "subject": "Campus Clean Up", 
+    "time": "15:00 - 17:00", 
+    "location": "Main Yard",
+    "description": "Volunteer event for campus cleaning.",
+    "organizer": "Student Council", 
+    "attendees": ["Volunteers"], 
+    "notes": "Bring gloves and trash bags."
+  },
+  { 
+    "date": "2025-10-26", 
+    "type": "organization", 
+    "subject": "Debate Club Practice", 
+    "time": "18:00 - 19:00", 
+    "location": "Language Lab",
+    "description": "Weekly debate practice session.",
+    "organizer": "Debate Club Leader", 
+    "attendees": ["Debate Club Members"], 
+    "notes": "Prepare arguments for next competition."
+  },
+  { 
+    "date": "2025-10-27", 
+    "type": "class", 
+    "subject": "Cyber Security", 
+    "time": "08:00 - 09:30", 
+    "location": "Room 309",
+    "description": "Lecture on network security, firewalls, and ethical hacking.",
+    "organizer": "Dr. Siti", 
+    "attendees": ["Zahra", "Ali", "Siti"], 
+    "notes": "Bring laptop for practical exercises."
+  },
+  { 
+    "date": "2025-10-27", 
+    "type": "guidance", 
+    "subject": "Internship Discussion", 
+    "time": "11:00 - 12:00", 
+    "location": "Career Center",
+    "description": "Discussion on internship placement and progress.",
+    "organizer": "Career Center Advisor", 
+    "attendees": ["Zahra"], 
+    "notes": "Bring internship report."
+  },
+  { 
+    "date": "2025-10-27", 
+    "type": "organization", 
+    "subject": "HIMTI Weekly Evaluation", 
+    "time": "15:30 - 16:30", 
+    "location": "Lab 2",
+    "description": "Weekly evaluation of HIMTI club activities and progress.",
+    "organizer": "HIMTI Committee", 
+    "attendees": ["All Members"], 
+    "notes": "Prepare progress report."
+  },
+  { 
+    "date": "2025-10-27", 
+    "type": "task", 
+    "subject": "Weekly Report Submission", 
+    "time": "23:59", 
+    "location": "Google Classroom",
+    "description": "Submit weekly report on academic and club activities.",
+    "organizer": "Academic Affairs", 
+    "attendees": ["All Students"], 
+    "notes": "PDF format, max 2 pages."
+  }
+   
+]
+,
+"assignments": [
+  {
+    "id": 1,
+    "title": "Mobile Programming - UI Design",
+    "subject": "Mobile Programming",
+    "deadline": "2025-10-08",
+    "progress": 1.0,
+    "description": "Redesign login and dashboard pages using Flutter layout widgets."
+  },
+  {
+    "id": 2,
+    "title": "Database Systems - ERD Diagram",
+    "subject": "Database Systems",
+    "deadline": "2025-10-12",
+    "progress": 0.6,
+    "description": "Create an Entity Relationship Diagram for the campus library system."
+  },
+  {
+    "id": 3,
+    "title": "Web Development - Responsive Layout",
+    "subject": "Web Development",
+    "deadline": "2025-10-15",
+    "progress": 0.4,
+    "description": "Implement responsive navigation bar and grid gallery using Bootstrap."
+  },
+  {
+    "id": 4,
+    "title": "AI Fundamentals - Research Report",
+    "subject": "AI Fundamentals",
+    "deadline": "2025-10-18",
+    "progress": 0.3,
+    "description": "Write a 3-page report on recent applications of generative AI in education."
+  },
+  {
+    "id": 5,
+    "title": "Operating Systems - Process Scheduling",
+    "subject": "Operating Systems",
+    "deadline": "2025-10-20",
+    "progress": 0.8,
+    "description": "Implement Round Robin scheduling algorithm in Python."
+  },
+  {
+    "id": 6,
+    "title": "Software Engineering - UML Diagram",
+    "subject": "Software Engineering",
+    "deadline": "2025-10-22",
+    "progress": 0.2,
+    "description": "Draw use case, class, and sequence diagrams for POLITICA AI project."
+  },
+  {
+    "id": 7,
+    "title": "Final Project Proposal",
+    "subject": "Capstone Project",
+    "deadline": "2025-10-30",
+    "progress": 0.7,
+    "description": "Submit proposal for final project including background, problem statement, and methodology."
+  },
+  {
+    "id": 8,
+    "title": "Ethics in Technology - Essay",
+    "subject": "Ethics in Technology",
+    "deadline": "2025-10-10",
+    "progress": 1.0,
+    "description": "Write an essay discussing ethical implications of AI-based surveillance."
+  },
+  {
+    "id": 9,
+    "title": "Data Communication - Simulation Task",
+    "subject": "Data Communication",
+    "deadline": "2025-10-25",
+    "progress": 0.5,
+    "description": "Simulate packet transmission using Cisco Packet Tracer."
+  },
+  {
+    "id": 10,
+    "title": "English for IT - Presentation",
+    "subject": "English for IT",
+    "deadline": "2025-10-28",
+    "progress": 0.9,
+    "description": "Prepare presentation slides about cybersecurity trends."
+  }
+  ],
+  "notes": [
+    { "title": "Course Outline", "summary": "The course will cover Flutter basics and state management.", "date": "2025-10-01" },
+    { "title": "Lecture 5", "summary": "Discussed architecture and performance optimization in Flutter.", "date": "2025-09-29" }
+  ]
+}
