@@ -67,8 +67,6 @@ flutter run
 
 Aplikasi akan dijalankan di emulator atau perangkat yang terhubung.
 
----
-
 ## 2. Beranda (Home Page)
 
 - Lihat **daftar kelas** dan **tugas hari ini**.  
@@ -77,7 +75,6 @@ Aplikasi akan dijalankan di emulator atau perangkat yang terhubung.
 
 Tampilan beranda membantu pengguna memantau aktivitas harian secara cepat.
 
----
 
 ## 3. Melihat Jadwal (Schedule Page)
 
@@ -85,8 +82,6 @@ Tampilan beranda membantu pengguna memantau aktivitas harian secara cepat.
 - Klik salah satu kegiatan untuk melihat **detailnya**.  
 
 Fitur ini memudahkan pengelolaan waktu agar tidak melewatkan agenda penting.
-
----
 
 ## 4. Menandai Tugas Selesai (Assignments Page)
 
@@ -96,7 +91,6 @@ Fitur ini memudahkan pengelolaan waktu agar tidak melewatkan agenda penting.
 
 Dengan fitur ini, progres tugas dapat dilacak dengan mudah.
 
----
 
 ## 5. Menambahkan Catatan (Notes Page)
 
@@ -105,7 +99,6 @@ Dengan fitur ini, progres tugas dapat dilacak dengan mudah.
 
 Catatan dapat digunakan sebagai referensi belajar dan dokumentasi pribadi.
 
----
 
 ✨ **Selamat menggunakan aplikasi dan kelola aktivitas harianmu dengan lebih efisien!**
 
