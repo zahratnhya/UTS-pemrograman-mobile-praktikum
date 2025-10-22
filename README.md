@@ -37,20 +37,32 @@ Data tersebut mencakup informasi pengguna, daftar kelas, tugas, jadwal kegiatan,
 ### Contoh struktur data dummy:
 ```json
 {
-  "user": { "name": "Zahra", "avatar": "" },
-  "classes_today": [
-    { "title": "Mobile Programming", "time": "13:20 PM - 14:20 PM" },
-    { "title": "Database Systems", "time": "15:00 PM - 16:00 PM" }
-  ],
-  "assignments": [
+  "user": {
+    "name": "Zahra",
+    "avatar": ""
+  },
+  "tasks": [
     {
-      "title": "Database Systems - ERD Diagram",
-      "subject": "Database Systems",
-      "deadline": "2025-10-12",
-      "progress": 0.6,
-      "description": "Create an Entity Relationship Diagram for the campus library system."
+      "id": 1,
+      "title": "Read Lecture Notes",
+      "time": "09:30 AM",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "Complete Assignment 2",
+      "time": "12:30 PM",
+
+      "status": false
+    },
+    {
+      "id": 3,
+      "title": "Review Placeholder Text",
+      "time": "02:30 PM",
+ 
+      "status": true
     }
-  ]
+  ],
 }
 ```
 
