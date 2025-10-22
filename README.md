@@ -56,25 +56,59 @@ Data tersebut mencakup informasi pengguna, daftar kelas, tugas, jadwal kegiatan,
 ```
 
 ---
+# 📱 Cara Menggunakan Aplikasi
 
-## ⚙️ Panduan Menjalankan Aplikasi
+## 1. Masuk ke Aplikasi
 
-1. Pastikan Flutter telah terinstal pada komputer:
-   ```bash
-   flutter --version
-   ```
-2. Clone repositori GitHub kamu:
-   ```bash
-   git clone https://github.com/username/campus-planner-app.git
-   ```
-3. Masuk ke direktori proyek:
-   ```bash
-   cd campus-planner-app
-   ```
-4. Jalankan aplikasi di emulator atau perangkat fisik:
-   ```bash
-   flutter run
-   ```
+Untuk menjalankan aplikasi, buka terminal di direktori proyek, lalu ketik perintah berikut:
+
+```bash
+flutter run
+```
+
+Aplikasi akan dijalankan di emulator atau perangkat yang terhubung.
+
+---
+
+## 2. Beranda (Home Page)
+
+- Lihat **daftar kelas** dan **tugas hari ini**.  
+- Klik ikon **🔔 (lonceng)** untuk membuka halaman **Notifications**.  
+- Tekan tombol **Add Task** untuk menambah tugas baru.  
+
+Tampilan beranda membantu pengguna memantau aktivitas harian secara cepat.
+
+---
+
+## 3. Melihat Jadwal (Schedule Page)
+
+- Semua kegiatan ditampilkan berdasarkan **tanggal** dan **kategori** (misalnya: class, meeting, event, dll).  
+- Klik salah satu kegiatan untuk melihat **detailnya**.  
+
+Fitur ini memudahkan pengelolaan waktu agar tidak melewatkan agenda penting.
+
+---
+
+## 4. Menandai Tugas Selesai (Assignments Page)
+
+- Buka tab **Assignments** untuk melihat semua daftar tugas.  
+- Klik pada salah satu tugas untuk membuka **detail tugas**.  
+- Tekan tombol **“Mark as Completed”** untuk menandai tugas telah selesai.  
+
+Dengan fitur ini, progres tugas dapat dilacak dengan mudah.
+
+---
+
+## 5. Menambahkan Catatan (Notes Page)
+
+- Gunakan halaman **Notes** untuk menyimpan ringkasan materi atau pengingat kuliah.  
+- Setiap catatan disusun berdasarkan **tanggal pembuatan**.  
+
+Catatan dapat digunakan sebagai referensi belajar dan dokumentasi pribadi.
+
+---
+
+✨ **Selamat menggunakan aplikasi dan kelola aktivitas harianmu dengan lebih efisien!**
 
 ---
 
